@@ -5,5 +5,46 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color:black;
+  color: white;
 }
 
+h1{
+  text-align:center;
+}
+
+#container{
+  display: flex;
+  flex-direction:row;
+}
+#sidebar{
+  flex: 1;
+}
+
+#gridContainer{
+  flex: 3;
+  background-color:beige;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  border: 1px solid red;
+  aspect-ratio: 1 /1;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color:blue;
+  }
+  #container{
+    flex-direction:column;
+  }
+}
