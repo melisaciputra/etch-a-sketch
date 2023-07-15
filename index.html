@@ -11,7 +11,19 @@
     <h1>Etch A Sketch</h1>
     <div id="container">
         <div id="sidebar">
-            <p>This is a sidebar</p>
+            <p>Click inside grid to toggle pen</p>
+            <button id="clearBtn">Clear</button>
+            <button id="newBtn">New</button>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="30" value="15" class="slider" id="myRange">
+                <p>Value: <span id="inputNum"></span></p>
+            </div>
+            <hr>
+            <label class="toggle">
+                <input id="randomColorCheckbox" class="toggle-checkbox" type="checkbox">
+                <div class="toggle-switch"></div>
+                <span class="toggle-label">Random Color</span>
+            </label>
         </div>
         <div id="gridContainer"></div>
     </div>
