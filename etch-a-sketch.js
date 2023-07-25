@@ -9,6 +9,10 @@ function randomRgbColor(){
     return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
+const heading = "Etch A Sketch";
+
+
+
 // Reset sketch with number of grid as input
 function resetSketch(gridNumber = 15){
     for (let x=0;x<gridNumber;x++){
@@ -20,29 +24,28 @@ function resetSketch(gridNumber = 15){
             gridY.classList.add('row-item');
             gridX.appendChild(gridY);
         }
-        
     }
 
-const rowItems = document.querySelectorAll('.row-item');
-let game = false; 
+    const rowItems = document.querySelectorAll('.row-item');
+    let game = false; 
 
-//listen to mouse click to enable to game
-rowItems.forEach(rowItem => rowItem.addEventListener('click',function (e) {
-    game = !game;
- } ));
+    //listen to mouse click to enable to game
+    rowItems.forEach(rowItem => rowItem.addEventListener('click',function (e) {
+        game = !game;
+    } ));
 
 
- //listen to mouse hover to color the canvas
-rowItems.forEach(rowItem => rowItem.addEventListener('mouseover',function (e) {
-    if (game) {
-        randomColorPen = document.getElementById("randomColorCheckbox").checked;
-        if (randomColorPen)
-        {
-            e.target.style.background = randomRgbColor();
+    //listen to mouse hover to color the canvas
+    rowItems.forEach(rowItem => rowItem.addEventListener('mouseover',function (e) {
+        if (game) {
+            randomColorPen = document.getElementById("randomColorCheckbox").checked;
+            if (randomColorPen)
+            {
+                e.target.style.background = randomRgbColor();
+            }
+            else e.target.style.background = '#696969';
         }
-        else e.target.style.background = '#696969';
-    }
- } ));
+    } ));
 }
 
 //Initial reset sketch
